@@ -9,20 +9,20 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start relative overflow-hidden font-sans bg-[#02497a]">
       {/* Top Header with Solid Background and Plane Image */}
-      <div className="w-full md:max-w-md h-36 relative flex items-center justify-center bg-[#02497a]">
+      <div className="w-full md:max-w-md h-48 relative flex items-center justify-center bg-[#02497a]">
         {/* Background Plane Image */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center overflow-visible">
           <img 
             src="https://i.imgur.com/VqCGtRm.png" 
             alt="Background Plane" 
             /* 
-               Alterações feitas:
-               1. 'object-contain' em vez de 'object-cover' para não cortar a imagem.
-               2. 'w-auto h-full' para a imagem se ajustar à altura do header.
-               3. Removido 'translate-y-[42px]' que estava empurrando a imagem para fora no mobile.
-               4. Adicionado 'md:scale-110' para manter o zoom apenas em telas maiores se desejar.
+               Alterações feitas para aumentar a imagem:
+               1. 'w-full h-auto': Faz a imagem ocupar toda a largura disponível.
+               2. 'scale-125': Aumenta o tamanho da imagem em 25% para ela ficar maior.
+               3. 'translate-y-4': Ajusta levemente a posição para baixo para centralizar melhor o avião.
+               4. 'md:scale-150': Em telas maiores (computador), ela fica ainda maior se necessário.
             */
-            className="w-auto h-full object-contain md:scale-110"
+            className="w-full h-auto object-contain scale-125 translate-y-4 md:scale-150 md:translate-y-0"
             referrerPolicy="no-referrer"
           />
         </div>
