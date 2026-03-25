@@ -11,11 +11,18 @@ export default function App() {
       {/* Top Header with Solid Background and Plane Image */}
       <div className="w-full md:max-w-md h-36 relative flex items-center justify-center bg-[#02497a]">
         {/* Background Plane Image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="https://i.imgur.com/VqCGtRm.png" 
             alt="Background Plane" 
-            className="w-full h-full object-cover scale-110 translate-y-[42px] md:translate-y-[-50px]"
+            /* 
+               Alterações feitas:
+               1. 'object-contain' em vez de 'object-cover' para não cortar a imagem.
+               2. 'w-auto h-full' para a imagem se ajustar à altura do header.
+               3. Removido 'translate-y-[42px]' que estava empurrando a imagem para fora no mobile.
+               4. Adicionado 'md:scale-110' para manter o zoom apenas em telas maiores se desejar.
+            */
+            className="w-auto h-full object-contain md:scale-110"
             referrerPolicy="no-referrer"
           />
         </div>
